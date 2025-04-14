@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       body: JSON.stringify(data)
     });
 
-    const result = await response.text(); // webhook 응답 확인용
+    const result = await response.text();
     return res.status(200).json({ message: "Success", response: result });
   } catch (error) {
     return res.status(500).json({ message: "Failed to call webhook", error: error.message });
